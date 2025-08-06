@@ -26,7 +26,7 @@ class TravelTimeApp(QMainWindow):
         central_widget = QWidget()
         self.setCentralWidget(central_widget)
 
-        layout = QHBoxLayout(central_widget)
+        main_layout = QVBoxLayout(central_widget)
 
         # Country Selector
         country_layout = QHBoxLayout()
@@ -38,7 +38,7 @@ class TravelTimeApp(QMainWindow):
         self.country_combo.setEditable(True)
         country_layout.addWidget(self.country_combo)
         country_layout.addStretch()
-        layout.addLayout(country_layout)
+        main_layout.addLayout(country_layout)
         
         # Arrival Date Selector
         arrival_layout = QHBoxLayout()
@@ -49,7 +49,7 @@ class TravelTimeApp(QMainWindow):
         self.arrival_date.setFixedWidth(150)
         arrival_layout.addWidget(self.arrival_date)
         arrival_layout.addStretch()
-        layout.addLayout(arrival_layout)
+        main_layout.addLayout(arrival_layout)
         
         # Departure Date Selector
         departure_layout = QHBoxLayout()
@@ -60,7 +60,7 @@ class TravelTimeApp(QMainWindow):
         self.departure_date.setFixedWidth(150)
         departure_layout.addWidget(self.departure_date)
         departure_layout.addStretch()
-        layout.addLayout(departure_layout)
+        main_layout.addLayout(departure_layout)
         
         # Buttons
         button_layout = QHBoxLayout()
@@ -73,13 +73,13 @@ class TravelTimeApp(QMainWindow):
         button_layout.addWidget(self.view_totals_btn)
         button_layout.addWidget(self.clear_data_btn)
         button_layout.addWidget(self.remove_country_btn)
-        layout.addLayout(button_layout)
+        main_layout.addLayout(button_layout)
         
         # Output Box
         self.output_text = QTextEdit()
         self.output_text.setReadOnly(True)
         self.output_text.setFixedHeight(200)
-        layout.addWidget(self.output_text)
+        main_layout.addWidget(self.output_text)
 
         # Button Functionality
         self.add_trip_btn.clicked.connect(self.add_trip)
