@@ -20,7 +20,7 @@ class TravelTimeApp(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("TravelTime+")
-        self.setWindowIcon(QIcon('TravelTime.png'))
+        self.setWindowIcon(QIcon('TravelTime.ico'))
         self.setGeometry(100, 100, 600, 500)
 
         central_widget = QWidget()
